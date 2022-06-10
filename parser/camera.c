@@ -6,7 +6,7 @@
 /*   By: hbourkan <hbourkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 19:44:50 by hbourkan          #+#    #+#             */
-/*   Updated: 2022/06/08 22:30:50 by hbourkan         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:04:00 by hbourkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	parse_camera(char **subline, t_data *data)
 	if (!data->camera)
 		return ;
 	if (get_tab_size(subline) != 4)
-		ft_error("Too many arguments");
+		ft_error("Too many or few arguments");
 	get_xyz_points(&data->camera->point, subline[1]);
 	get_xyz_vectors(&data->camera->vector, subline[2]);
 	if (!(ft_atoi(subline[3]) >= 0 && ft_atoi(subline[3]) < 180))

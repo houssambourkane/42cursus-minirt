@@ -6,7 +6,7 @@
 #    By: hbourkan <hbourkan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 18:41:50 by hbourkan          #+#    #+#              #
-#    Updated: 2022/06/09 15:04:50 by hbourkan         ###   ########.fr        #
+#    Updated: 2022/06/09 18:04:52 by hbourkan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,7 @@ $(NAME): $(OFILES)
 	
 %.o : %.c
 	@cc $(FLAGS) -c  $< -o $@
-	@printf "🚀 $(CYAN)Generating $(YELLOW_UNDERLINE)$@ $(RESET)$(CYAN)from $(YELLOW_UNDERLINE)$< 🔥$(RESET)\n"
+	@printf "🚀 $(CYAN)Generating $(YELLOW_UNDERLINE)$@ $(RESET)$(CYAN)from $(YELLOW_UNDERLINE)$<$(RESET) 🔥\n"
 	
 clean:
 	@rm -f $(OFILES)

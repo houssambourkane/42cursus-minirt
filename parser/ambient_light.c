@@ -6,7 +6,7 @@
 /*   By: hbourkan <hbourkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 19:44:44 by hbourkan          #+#    #+#             */
-/*   Updated: 2022/06/08 23:53:56 by hbourkan         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:03:51 by hbourkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	parse_ab_light(char **subline, t_data *data)
 	if (!data->amb_light)
 		return ;
 	if (get_tab_size(subline) != 3)
-		ft_error("Too many arguments");
+		ft_error("Too many or few arguments");
 	if ((!is_int(subline[1]) && !ft_isfloat(subline[1])))
 		ft_error("Not a valid data type");
 	if (!(ft_atof(subline[1]) >= 0.0f && ft_atof(subline[1]) <= 1.0f))

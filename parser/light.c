@@ -6,7 +6,7 @@
 /*   By: hbourkan <hbourkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 19:44:58 by hbourkan          #+#    #+#             */
-/*   Updated: 2022/06/08 23:54:37 by hbourkan         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:04:23 by hbourkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	parse_light(char **subline, t_data *data)
 	if (!data->light)
 		return ;
 	if (get_tab_size(subline) != 4)
-		ft_error("Too many arguments");
+		ft_error("Too many or few arguments");
 	get_xyz_points(&data->light->point, subline[1]);
 	if (!(ft_atof(subline[2]) >= 0.0 && ft_atof(subline[2]) <= 1.0))
 		ft_error("Light brightness ratio not valid");

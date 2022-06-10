@@ -6,7 +6,7 @@
 /*   By: hbourkan <hbourkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:42:00 by hbourkan          #+#    #+#             */
-/*   Updated: 2022/06/07 11:34:27 by hbourkan         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:04:20 by hbourkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void	check_buffer(char *buffer)
 		i++;
 	}
 	if (counter_amb_lights != 1 || counter_cameras != 1 || counter_lights != 1)
-		ft_error("Too many cameras/ambient lights/lights");
+		ft_error("Too many or few cameras/ambient lights/lights");
 }

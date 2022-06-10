@@ -6,7 +6,7 @@
 /*   By: hbourkan <hbourkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 19:42:50 by hbourkan          #+#    #+#             */
-/*   Updated: 2022/06/08 22:29:36 by hbourkan         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:04:03 by hbourkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_cylinder	*parse_cylinder(char **subline)
 	if (!cylinder)
 		return (NULL);
 	if (get_tab_size(subline) != 6)
-		ft_error("Too many arguments");
+		ft_error("Too many or few arguments");
 	get_xyz_points(&cylinder->point, subline[1]);
 	get_xyz_vectors(&cylinder->vector, subline[2]);
 	cylinder->diameter = ft_atof(subline[3]);
