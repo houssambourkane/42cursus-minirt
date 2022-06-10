@@ -6,7 +6,7 @@
 /*   By: hbourkan <hbourkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 23:37:01 by hbourkan          #+#    #+#             */
-/*   Updated: 2022/06/09 15:15:30 by hbourkan         ###   ########.fr       */
+/*   Updated: 2022/06/10 11:19:24 by hbourkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,28 @@ t_solution	*get_solution_origin(t_data data, t_vector ray, t_point origin)
 	return (get_min(arr_t));
 }
 
+int	light_in_planes(t_data data)
+{
+	t_vector	lp;
+	double		dot;
+
+	while (data.plane)
+	{
+		lp = vector_p1_p2(data.light->point, data.plane->point);
+		normalize(&lp);
+		dot = dot_v_v(lp, data.plane->vector);
+		if (fabs(dot) < 0.01f)
+			return (1);
+		data.plane = data.plane->next;
+	}
+	return (0);
+}
+
 void	rendering(t_data data, t_mlx ml, t_solution *s, t_vector ray)
 {
 	if (s)
 	{
-		if (shadow_rending(data, s, ray))
+		if (shadow_rending(data, s, ray) || light_in_planes(data))
 			ml.image_ptr[ml.pos] = create_trgb(TRANSPARENCY,
 					data.amb_light->rgb, 1, data.amb_light->ratio);
 		else
